@@ -24,16 +24,17 @@ function showTheResult(){
     comFromLocal.find((element) => {
         let found = element.charAt(0) === dropdownMenuButton2.value.charAt(0);
         if (!found) {
-            console.log("if");
+            
             if(dropdownMenuButton2.value.length === 0){
             dropDownMenu.innerHTML = "";
         }
         } 
         else {
             dropDownMenu.innerHTML += `<li><a class="dropdown-item" href="#">${element}</a></li>`;
-           console.log("eles");
-           if(dropdownMenuButton2.value === dropdownMenuButton2.value){
-            return
+
+           if(dropdownMenuButton2.value.length > 1){
+
+            dropDownMenu.innerHTML = ""
            }
         }
       });
