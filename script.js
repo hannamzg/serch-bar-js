@@ -7,7 +7,10 @@ let showAllCity = document.getElementById("showAllCity");
 let BtnShowAllCity = document.getElementById("BtnShowAllCity")
 let arr = [];
 
+
+dropdownMenuButton2.addEventListener("input", showTheResult);
 let comFromLocal = JSON.parse(localStorage.getItem("country"));
+
 
 addTooArr.addEventListener("click" , ()=>{
     arr.push(inputTakeContsries.value);
@@ -16,23 +19,21 @@ addTooArr.addEventListener("click" , ()=>{
     restiNP()
 });
 
-dropdownMenuButton2.addEventListener("input", showTheResult);
-
-
 function showTheResult(){
+    let comFromLocal = JSON.parse(localStorage.getItem("country"));
     comFromLocal.find((element) => {
         let found = element.charAt(0) === dropdownMenuButton2.value.charAt(0);
         if (!found) {
             console.log("if");
-            if(dropdownMenuButton2.value.length  === 0){
+            if(dropdownMenuButton2.value.length === 0){
             dropDownMenu.innerHTML = "";
         }
         } 
         else {
-            dropDownMenu.innerHTML += `<li><a class="dropdown-item " href="#">${element}</a></li>`;
+            dropDownMenu.innerHTML += `<li><a class="dropdown-item" href="#">${element}</a></li>`;
            console.log("eles");
-           if(dropdownMenuButton2.value.length  === 0){
-           alert("as")
+           if(dropdownMenuButton2.value === dropdownMenuButton2.value){
+            return
            }
         }
       });
